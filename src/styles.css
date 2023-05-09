@@ -110,6 +110,7 @@ font-size: 14px;
 line-height: 19px;
 
 
+
 color: #000000;
 }
 
@@ -416,6 +417,7 @@ a {
   margin-right: 1px;
   margin-bottom: 32px;
   margin-left: 11.48vw;
+  
 
   background-color: white;
   border-radius: 8px;
@@ -507,12 +509,13 @@ a {
   height: 230px;
 
   /* Image gradient */
-  background: linear-gradient(137.12deg, #FF3A3A 2.93%, #FFDF68 88.94%);
+  /* background: linear-gradient(137.12deg, #FF3A3A 2.93%, #FFDF68 88.94%); */
 
   border-radius: 4px;
   justify-self: middle;
   margin-left: 8px;
   margin-top: 8px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.16);
 }
 
 
