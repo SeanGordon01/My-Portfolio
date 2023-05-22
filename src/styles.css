@@ -879,6 +879,16 @@ footer {
 
 @media (max-width: 935px) {
   .spacer {
-    height: 190px;
+    height: 40px;
   }
+}
+
+
+/* about page hero area larger than rest */
+
+.about-page-hero-area {
+  display: flex;
+  flex-direction: column;
+  height: 120%; /* 100% of parent div, not view height (vh) (note, no action required) */
+  justify-content: center;
 }
