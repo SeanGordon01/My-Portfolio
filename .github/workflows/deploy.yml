@@ -13,6 +13,7 @@ jobs:
       BUCKET_NAME: your-bucket-name
       AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
       AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      DISTRIBUTION_ID: E1B7O58RO4RNBY
 
     steps:
       - name: Checkout code
@@ -34,3 +35,7 @@ jobs:
       - name: Copy website code to bucket
         run: |
           aws s3 cp . s3://seangordon.com/ --recursive
+
+- name: CloudFront cache invalidation
+        run: |
+          aws cloudfront create-invalidation --distribution-id $DISTRIBUTION_ID --paths "/*"
