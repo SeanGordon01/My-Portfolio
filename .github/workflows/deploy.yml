@@ -28,7 +28,7 @@ jobs:
       - name: Copy website code to bucket
         run: |
           # aws s3 cp . s3://seangordon.com/ --recursive
-          aws s3 sync . s3://seangordon.com/ --delete
+          cat .gitignore | awk '{printf "--exclude \"%s\" ", $1}' | xargs aws s3 sync . s3://seangordon.com/ --delete
 
 
       - name: CloudFront cache invalidation
