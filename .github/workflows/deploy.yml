@@ -33,4 +33,4 @@ jobs:
 
       - name: Copy website code to bucket
         run: |
-          aws s3 cp . s3://$seangordon.com/ --recursive
+          aws s3 cp . s3://seangordon.com/ --recursive
