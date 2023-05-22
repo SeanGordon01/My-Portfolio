@@ -870,3 +870,15 @@ footer {
     margin-right: 6.66%;
   }
 }
+
+
+
+.spacer {
+  height: 0px;
+}
+
+@media (max-width: 935px) {
+  .spacer {
+    height: 110px;
+  }
+}
