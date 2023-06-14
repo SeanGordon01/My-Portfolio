@@ -1,0 +1,1204 @@
+/* ---------- CSS CONTENTS ---------- */
+/* 
+HOME PAGE:
+- LISTS
+- FONTS
+- HEADER
+- IMAGES & ICONS
+- FLEX
+- BODY & FOOTER GRID
+- MEDIA SCROLLER
+
+ABOUT PAGE:
+- text boxes
+- image container
+- grid
+- mobile grid
+
+CV PAGE:
+- text boxes
+- image container
+- grid
+- mobile grid
+
+CONTACT PAGE:
+- text boxes
+- image container
+- grid
+- mobile grid
+*/
+
+
+
+* {
+    margin: 0px;
+}
+
+
+
+
+/* ----- LISTS ----- */
+
+li {
+    list-style: none;
+}
+
+.ul {
+    list-style: none;
+}
+
+
+
+
+/* ----- TYPE & FONTS ----- */
+/* find nav-link css in header section */
+
+/* CONTENTS: 
+- fonts 
+- <a> & hover
+- font colours
+*/
+
+/* FONTS */
+h1 {
+    font-family: 'Futura';
+    font-style: bold;
+
+    font-size: 45pt;
+    line-height: 50pt;
+}
+
+h2 {
+    font-family: 'Futura';
+    font-style: bold;
+}
+
+h3 {
+    font-family: 'Futura';
+    font-style: bold;
+}
+
+h6 {
+    font-family: 'Lora';
+    font-size: 16px;
+}
+
+p {
+    font-family: 'Nunito', sans-serif;
+}
+
+small {
+    font-family: 'Nunito', sans-serif;
+}
+
+/* <a> - used for links in body and header */
+a {
+    text-decoration: none;
+}
+
+a :hover {
+    color: #1BCAF7;
+}
+
+
+/* ----- FONT COLOURS ----- */
+
+.black-text {
+    color: #000000;
+}
+
+.white-text {
+    color: #ffffff;
+}
+
+
+
+
+
+/* ----- HEADER ----- */
+/* CONTENTS: 
+- positioning & style
+- hamburger menu
+- hamburger menu animation
+- responsive mobile header
+- spacer
+*/
+
+/* HEADER / POSITIONING & STYLE */
+.header {
+    /* fixed positioning, basic style */
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+
+    background-color: #ffffff;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.16);
+}
+
+.header-content {
+    /* content area within header, padding added here (6.65vw) */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 6.65vw;
+    height: 60px;
+}
+
+.nav-logo {
+    position: relative;
+    height: 30px;
+    margin-top: 5px;
+}
+
+/* .nav {
+    There are bugs with the transition effect, commented until resolved.
+    transition: all 0.25s ease-in-out;
+} */
+
+.nav-list {
+    display: flex;
+    column-gap: 40px;
+}
+
+.nav-link {
+    font-family: 'Nunito', sans-serif;
+    color: #000000;
+    transition: 0.15s;
+}
+
+.nav-link:hover {
+    color: #1BCAF7;
+}
+
+
+/* This is the dropdown that appears when HAMBURGER is clicked */
+.nav-open {
+    transform: translate(0%) !important;
+}
+
+
+/* ----- HEADER / HAMBURGER MENU ----- */
+.hamburger {
+    display: none;
+    cursor: pointer;
+}
+
+.bar {
+    height: 2px;
+    width: 27px;
+    background: #252525;
+    margin: 5px 0;
+    transition: all 0.25s ease-in-out;
+}
+
+/* HEADER / HAMBURGER / ANIMATION POSITIONING */
+.hamburger-open .bar:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+.hamburger-open .bar:nth-child(2) {
+    opacity: 0;
+}
+.hamburger-open .bar:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+
+/* ----- HEADER / RESPONSIVE MOBILE HEADER ----- */
+@media(max-width: 852px) {
+    .nav {
+        position: fixed;
+        top: 60px;
+        left: 0px;
+        background-color: #ffffff;
+        width: 100%;
+        height: 100vh;
+        padding:  10px 0 25px;
+        transform: translateX(-100%);
+    }
+
+    .nav-list {
+        flex-direction: column;
+        align-items: center;
+        row-gap: 40px;
+        padding-left: 0;
+        padding-top: 30vh;
+    }
+
+    .nav-link {
+        color: #252525;
+    }
+
+    .hamburger {
+        display: block;
+    }
+}
+
+/* HEADER / SPACER */
+.spacer {
+    /* above grid, behind header, 
+    creating a top margin. */
+
+    height: 60px;
+}
+
+
+
+
+
+
+/* ----- IMAGES & ICONS ----- */
+
+.nav-logo {
+    position: relative;
+    height: 30px;
+    margin-top: 5px;
+}
+
+.illustration {
+    max-width: 40vw;
+}
+/* RESPONSIVE illustration width */
+@media(max-width: 852px){
+    .illustration {
+        /* shrinks image when screen edges close in */
+        max-width: 80vw;
+    }
+}
+
+.footer-icon {
+    height: 24px;
+}
+
+
+
+
+
+/* ----- FLEX ----- */
+
+/* CONTENTS: 
+- illustration box
+- text box
+- CTA links
+- footer flex & inline block
+*/
+
+/* FLEX / ILLUSTRATION BOX */
+.illustration-box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+/* FLEX / TEXT BOX */
+.text-flex-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; 
+    
+    padding-left: 11.97vw;
+    padding-bottom: 50px;
+
+    padding-right: 30px;
+}
+
+@media(max-width: 852px){
+    .illustration-box {
+        padding-bottom: 70px;
+    }
+
+    .text-flex-box {
+        padding-left: 6.65vw;
+        padding-right: 6.65vw;
+    }
+}
+
+/* FLEX / CTA LINKS */
+.centered-text {
+    text-align: center;
+
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.CTA-links {
+    text-align: center;
+}
+
+
+
+/* ----- FLEX / FOOTER FLEX & INLINE-BLOCK ----- */
+
+/* footer-text-box & footer-icons-box stacked using FLEX in FOOTER-LEFT grid section */
+.footer-text-box {
+    padding-left: 11.97vw;
+    padding-top: 20px;
+
+    /* sync with padding-bottom in footer-nav-box */
+    padding-bottom: 50px;
+}
+.footer-icons-box {
+    padding-top: 15px;
+}
+
+.footer-nav-box {
+    display: flex;
+    flex-direction: column;
+
+    padding-top: 20px;
+    /* sync with footer-text-box in padding-bottom */
+    padding-bottom: 50px;
+    
+}
+
+@media(max-width: 852px){
+    .footer-text-box {
+        padding-left: 6.65vw;
+    }
+
+    .footer-nav-box {
+        padding-left: 6.65vw;
+    }
+}
+
+
+
+/* ----- HOME / BODY & FOOTER - DESKTOP GRID & CONTAINER ----- */
+/* CONTENT: 
+- grid container body (defines columns and rows for HOME page
+- grid divs 1 to 6
+- mobile responsive grid
+*/
+
+
+/* body {
+} */
+
+/* HOME / GRID / CONTAINER */
+.grid-container-body {
+    display: grid;
+    grid-gap: 0px;
+    grid-template-columns: [col] 1fr [col] 1fr;
+    grid-template-rows: [row] [row] [row] [row];
+}
+  
+/* HOME / GRID / GRID DIVS 1 TO 6 */
+/* heading */
+.div-grid-1 {
+    grid-column: col 1 / span 1;
+    grid-row: row 1;
+
+    /* this flex command pushes the <h1> and <p> tags 
+    down to the bottom of div-grid */
+    display: flex;
+    justify-content: flex-start;
+
+    background-color: #ffffff;
+}
+
+/* Home page illustration */
+.div-grid-2 {
+    grid-column: col 2 / span 1;
+    grid-row: row 1;
+
+    background-color: #ffffff;
+}
+
+/* Media scroller */
+.div-grid-3 {
+    grid-column: col 1 / span 2;
+    grid-row: row 2;
+
+    background-color: #ffffff;
+}
+
+/* CTA section */
+.div-grid-4 {
+    grid-column: col 1 / span 2;
+    grid-row: row 3;
+
+    display: flex;
+    justify-content: center;
+    
+    background-color: #EFF5F6;
+}
+
+/* Footer LEFT */
+.div-grid-5 {
+    grid-column: col 1 / span 1;
+    grid-row: row 4;
+
+    background-color: #252525;
+}
+
+/* Footer RIGHT */
+.div-grid-6 {
+    grid-column: col 2 / span 1;
+    grid-row: row 4;
+
+    background-color: #252525;
+}
+
+
+
+/* ----- BODY & FOOTER - RESPONSIVE MOBILE GRID ----- */
+
+@media(max-width: 852px){
+    /* H1 & p */
+    .div-grid-1 {
+        grid-column: col 1 / span 2;
+        grid-row: row 2;
+    }
+    /* Home page illustration */
+    .div-grid-2 {
+        grid-column: col 1 / span 2;
+        grid-row: row 1;
+    }
+    /* Media scroller */
+    .div-grid-3 {
+        grid-column: col 1 / span 2;
+        grid-row: row 3;
+    }
+    /* CTA section */
+    .div-grid-4 {
+        grid-column: col 1 / span 2;
+        grid-row: row 4;
+    }
+    /* Footer LEFT */
+    .div-grid-5 {
+        grid-column: col 1 / span 2;
+        grid-row: row 5;
+    }
+    /* Footer RIGHT */
+    .div-grid-6 {
+        grid-column: col 1 / span 2;
+        grid-row: row 6;
+    }
+}
+
+
+
+
+
+/* ----- HORIZONTAL MEDIA SCROLLER ----- */
+
+/* Horizontal Media Scroller (overflow x) */
+/*----------------------------------------*/
+
+/* Contents of Media Scroller:
+- scroller container with overflow x
+- First card (with left margin)
+- middle cards
+- last card (with right margin)
+- card image
+- card heading
+- card text */
+
+  /* MEDIA SCROLLER / scroller container with overflow x */
+.scroller-container {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: auto;
+
+    padding-top: 50px;
+    padding-bottom: 70px;
+
+    overscroll-behavior-inline: contain;
+    overflow-x: auto;
+  
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
+}
+  .scroller-container::-webkit-scrollbar { 
+    display: none;  /* Safari and Chrome */
+}
+
+  
+
+/* MEDIA SCROLLER / CARD / First Card with left margin */
+.scroller-item-1 { 
+    cursor: pointer;
+    border: none;
+    background-color: white;
+    border-radius: 8px;
+
+    display: grid;
+    align-items: left;
+    justify-content: left;
+
+    width: 246px;
+    height: 371px;
+
+    margin-top: 0%;
+    margin-right: 1px;
+    margin-bottom: 0px;
+    margin-left: 6.6vw;
+}
+  
+.scroller-item-1:hover{
+    background-color: black;
+} 
+.scroller-item-1:hover .project-heading {
+    color: white;
+}
+.scroller-item-1:hover .project-textbox {
+    color: white;
+}
+  
+
+/* MEDIA SCROLLER / CARD / Card - applied to all scroller cards except left and right end cards. */
+.scroller-item { 
+    cursor: pointer;
+    border: none;
+    background-color: white;
+    border-radius: 8px;
+
+    display: grid;
+    align-items: left;
+    justify-content: left;
+
+    width: 246px;
+    height: 371px;
+
+    margin-top: 0%;
+    margin-right: 1px;
+    margin-bottom: 0px;
+}
+  
+.scroller-item:hover{
+    background-color: black;
+}
+.scroller-item:hover .project-heading {
+    color: white;
+}
+.scroller-item:hover .project-textbox {
+    color: white;
+}
+
+  
+/* MEDIA SCROLLER / CARD / Last Card with right margin */
+.scroller-item-last {
+    cursor: pointer;
+    border: none;
+    background-color: white;
+    border-radius: 8px;
+
+    display: grid;
+    align-items: left;
+    justify-content: left;
+
+    width: 246px;
+    height: 371px;
+
+    margin-top: 0px;
+    margin-right: 6.6vw;
+    margin-bottom: 0px;
+    margin-left: 0px;
+}
+      
+.scroller-item-last:hover{
+    background-color: black;
+}
+.scroller-item-last:hover .project-heading {
+    color: white;
+}
+.scroller-item-last:hover .project-textbox {
+    color: white;
+}
+      
+  
+/* MEDIA SCROLLER / CARD / Card image */
+.project-image { 
+    justify-self: middle;
+
+    width: 230px;
+    height: 230px;
+    margin-left: 8px;
+    margin-top: 8px;
+
+    border-radius: 4px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.16);
+}
+  
+  
+/* MEDIA SCROLLER / CARD / Card heading */
+.project-heading { 
+    height: 26px;
+
+    margin-left: 16px;
+    margin-top: 8px;
+
+    font-family: 'Futura';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18.5px;
+    line-height: 25px;
+    color: black;
+}
+  
+  
+/* MEDIA SCROLLER / CARD / Card text */
+.project-textbox { 
+    height: 51px;
+
+    margin-left: 16px;
+    margin-right: 16px;
+    margin-bottom: 16px;
+  
+    font-family: 'noto-sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 19px;
+    color: #000000;
+}
+  
+
+/* MEDIA SCROLLER / CARD / MOBILE RESPONSIVENESS
+scales cards up to desktop display size, and increases left and right margins */
+@media (min-width: 852px) {
+    .scroller-item-1{
+      width: 350px;
+      height: 459px;
+      margin-left: 11.97vw;
+    }
+      
+    .scroller-item{
+      width: 350px;
+      height: 459px;
+    }
+  
+    .scroller-item-last{
+      width: 350px;
+      height: 459px;
+      margin-right: 11.97vw;
+    }
+  
+    .project-image {
+      width: 334px;
+      height: 334px;
+    }
+
+    .project-textbox {
+      margin-bottom: 8px;
+    }
+}
+
+
+
+
+
+
+
+/* ------------------------------------------------------------------- */
+/* ----- ABOUT PAGE -------------------------------------------------- */
+
+/* CONTENTS:
+- text boxes
+- image container
+- grid
+- mobile grid
+*/
+
+/* ABOUT / TEXT BOXES */
+.about-text-flex-box-1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; 
+    
+    padding-left: 11.97vw;
+    padding-bottom: 30px;
+}
+
+.about-text-flex-box-2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; 
+    
+    padding-left: 40px;
+
+    padding-right: 11.97vw;
+    padding-bottom: 50px;
+}
+
+@media (max-width: 852px) {
+    .about-text-flex-box-1 {
+        padding-left: 6.65vw;
+        padding-right: 6.65vw;
+    }
+
+    .about-text-flex-box-2 {
+        padding-left: 6.65vw;
+        padding-right: 6.65vw;
+    }
+}
+
+/* ABOUT / IMAGE CONTAINER */
+.about-illustration-box {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+@media(max-width: 852px){
+    .about-illustration-box {
+        padding-bottom: 70px;
+    }
+}
+
+
+/* ABOUT / GRID */
+
+@media (max-width: 852px) {
+    .about-div-grid-2 {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+/* container */
+.about-grid-container-body {
+    display: grid;
+    grid-gap: 0px;
+    grid-template-columns: [col] 1fr [col] 1fr;
+    grid-template-rows: [row] [row] [row] [row];
+}
+
+/* heading */
+.about-div-grid-1 {
+    grid-column: col 1 / span 1;
+    grid-row: row 1;
+
+    display: flex;
+    justify-content: flex-start;
+
+    background-color: #ffffff;
+}
+
+/* image */
+.about-div-grid-2 {
+    grid-column: col 2 / span 1;
+    grid-row: row 1;
+
+    background-color: #ffffff;
+}
+
+/* paragraph */
+.about-div-grid-3 {
+    grid-column: col 1 / span 1;
+    grid-row: row 2;
+
+    background-color: #ffffff;
+}
+
+/* paragraph */
+.about-div-grid-4 {
+    grid-column: col 2 / span 1;
+    grid-row: row 2;
+
+    background-color: #ffffff;
+}
+
+/* spacer between text and CTA */
+.about-page-spacer {
+    grid-column: col 1 / span 2;
+    grid-row: row 3;
+
+    height: 28vh;
+}
+
+/* CTA */
+.about-div-grid-5 {
+    grid-column: col 1 / span 2;
+    grid-row: row 4;
+
+    /* centering */
+    display: flex;
+    justify-content: center;
+
+    background-color: #EFF5F6;
+}
+
+/* footer left */
+.about-div-grid-6 {
+    grid-column: col 1 / span 1;
+    grid-row: row 5;
+
+    background-color: #252525;
+}
+
+/* footer right */
+.about-div-grid-7 {
+    grid-column: col 2 / span 1;
+    grid-row: row 5;
+
+    background-color: #252525;
+}
+
+/* ABOUT / RESPONSIVE GRID FOR MOBILE */
+@media (max-width: 852px) {
+    .about-div-grid-1 {
+        grid-column: col 1 / span 2;
+        grid-row: row 2;
+    }
+    .about-div-grid-2 {
+        grid-column: col 1 / span 2;
+        grid-row: row 1;
+    }
+    .about-div-grid-3 {
+        grid-column: col 1 / span 2;
+        grid-row: row 3;
+    }
+    .about-div-grid-4 {
+        grid-column: col 1 / span 2;
+        grid-row: row 4;
+    }
+
+    /* spacer */
+    .about-page-spacer {
+        grid-column: col 1 / span 2;
+        grid-row: row 5;
+    }
+
+    .about-div-grid-5 {
+        grid-column: col 1 / span 2;
+        grid-row: row 6;
+    }
+    .about-div-grid-6 {
+        grid-column: col 1 / span 2;
+        grid-row: row 7;
+    }
+    .about-div-grid-7 {
+        grid-column: col 1 / span 2;
+        grid-row: row 8;
+    }
+}
+
+
+
+
+/* ---------------------------------------------------------------- */
+/* ----- CONTACT PAGE --------------------------------------------- */
+
+/* CONTENTS:
+- text boxes
+- image container
+- grid
+- mobile grid */
+
+/* Contact page icons benath main header - linkedin and behance */
+
+.contact-icons-container {
+    justify-items: left;
+    display: flex;
+    align-items: middle;
+    margin: 0;
+    margin-top: 20px;
+    padding: 0;
+    list-style: none;
+    min-width: 100%;
+}
+  
+.contact-icon {
+    /* cursor: pointer; */
+    margin: 0px;
+  
+    margin-left: 33px;
+    height: 24px;
+    width: 24px;
+    flex-shrink: 0;
+}
+  
+.contact-icon path {
+    fill: black;
+}
+  
+.contact-icon:hover path {
+    fill: #1BCAF7;
+    cursor: pointer;
+}
+
+
+/* CONTACT / TEXT BOXES */
+.contact-text-flex-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; 
+    
+    padding-left: 11.97vw;
+    padding-bottom: 30px;
+}
+
+@media (max-width: 852px) {
+    .contact-text-flex-box-1 {
+        padding-left: 6.65vw;
+        padding-right: 6.65vw;
+    }
+}
+
+
+/* CONTACT / IMAGE CONTAINER */
+.contact-illustration-box {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+@media(max-width: 852px){
+    .contact-illustration-box {
+        padding-bottom: 70px;
+    }
+}
+
+
+/* CONTACT / GRID */
+@media (max-width: 852px) {
+    .contact-div-grid-2 {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+/* container */
+.contact-grid-container-body {
+    display: grid;
+    grid-gap: 0px;
+    grid-template-columns: [col] 1fr [col] 1fr;
+    grid-template-rows: [row] [row] [row] [row];
+}
+
+/* heading */
+.contact-div-grid-1 {
+    grid-column: col 1 / span 1;
+    grid-row: row 1;
+
+    display: flex;
+    justify-content: flex-start;
+
+    background-color: #ffffff;
+}
+
+/* image */
+.contact-div-grid-2 {
+    grid-column: col 2 / span 1;
+    grid-row: row 1;
+
+    background-color: #ffffff;
+}
+
+.contact-page-spacer {
+    grid-column: col 1 / span 2;
+    grid-row: row 2;
+
+    height: 35vh;
+}
+
+/* CTA */
+.contact-div-grid-3 {
+    grid-column: col 1 / span 2;
+    grid-row: row 3;
+
+    /* centering */
+    display: flex;
+    justify-content: center;
+
+    background-color: #EFF5F6;
+}
+
+/* footer left */
+.contact-div-grid-4 {
+    grid-column: col 1 / span 1;
+    grid-row: row 4;
+
+    background-color: #252525;
+}
+
+/* footer right */
+.contact-div-grid-5 {
+    grid-column: col 2 / span 1;
+    grid-row: row 4;
+
+    background-color: #252525;
+}
+
+/* CONTACT / RESPONSIVE GRID FOR MOBILE */
+@media (max-width: 852px) {
+    .contact-div-grid-1 {
+        grid-column: col 1 / span 2;
+        grid-row: row 2;
+    }
+    .contact-div-grid-2 {
+        grid-column: col 1 / span 2;
+        grid-row: row 1;
+    }
+
+    /* spacer */
+    .contact-page-spacer {
+        grid-column: col 1 / span 2;
+        grid-row: row 3;
+    }
+
+    .contact-div-grid-3 {
+        grid-column: col 1 / span 2;
+        grid-row: row 4;
+    }
+    .contact-div-grid-4 {
+        grid-column: col 1 / span 2;
+        grid-row: row 5;
+    }
+    .contact-div-grid-5 {
+        grid-column: col 1 / span 2;
+        grid-row: row 6;
+    }
+}
+
+
+
+
+
+/* ---------------------------------------------------------------- */
+/* ----- PROJECT PAGE --------------------------------------------- */
+
+/* CONTENTS:
+- image container
+- project png
+- spacers
+- grid
+- mobile grid 
+*/
+
+/* PROJECT PAGE / project png */
+.images-container {
+    margin-top: 20px;
+    max-width: 1400px;
+}
+  
+.project-png {
+    max-width: 100%;
+    height: auto;
+    padding: 0px;
+    display: block;
+}
+
+/* spacer - in place of page illustration to give the header more room */
+.project-spacer {
+    height: 600px;
+}
+
+.project-spacer-2 {
+    height: 200px;
+}
+
+@media (max-width: 852px) {
+    .project-spacer {
+        height: 200px;
+    }
+    
+    .project-spacer-2 {
+        height: 100px;
+    }
+}
+
+
+/* ----- GRID ----- */
+/* container */
+.project-grid-container-body {
+    display: grid;
+    grid-gap: 0px;
+    grid-template-columns: [col] 1fr [col] 1fr;
+    grid-template-rows: [row] [row] [row] [row];
+}
+
+/* heading */
+.project-div-grid-1 {
+    grid-column: col 1 / span 1;
+    grid-row: row 1;
+
+    display: flex;
+    justify-content: flex-start;
+}
+
+/* image placeholder spacer */
+.project-div-grid-2 {
+    grid-column: col 2 / span 1;
+    grid-row: row 1;
+}
+
+/* Project imgs */
+.project-div-grid-3 {
+    grid-column: col 1 / span 2;
+    grid-row: row 2;
+
+    /* centering */
+    display: flex;
+    justify-content: center;
+}
+
+/* project spacer 2 */
+.project-div-grid-4 {
+    grid-column: col 1 / span 2;
+    grid-row: row 3;
+}
+
+/* CTA */
+.project-div-grid-5 {
+    grid-column: col 1 / span 2;
+    grid-row: row 4;
+
+    /* centering */
+    display: flex;
+    justify-content: center;
+
+    background-color: #EFF5F6;
+}
+
+/* footer left */
+.project-div-grid-6 {
+    grid-column: col 1 / span 1;
+    grid-row: row 5;
+
+    background-color: #252525;
+}
+
+/* footer right */
+.project-div-grid-7 {
+    grid-column: col 2 / span 1;
+    grid-row: row 5;
+
+    background-color: #252525;
+}
+
+/* PROJECT PAGE / RESPONSIVE GRID FOR MOBILE */
+@media (max-width: 852px) {
+    .project-div-grid-1 {
+        grid-column: col 1 / span 2;
+        grid-row: row 2;
+    }
+    .project-div-grid-2 {
+        grid-column: col 1 / span 2;
+        grid-row: row 1;
+    }
+    .project-div-grid-3 {
+        grid-column: col 1 / span 2;
+        grid-row: row 3;
+    }
+    .project-div-grid-4 {
+        grid-column: col 1 / span 2;
+        grid-row: row 4;
+    }
+    .project-div-grid-5 {
+        grid-column: col 1 / span 2;
+        grid-row: row 5;
+    }
+/* to do: */
+    .project-div-grid-6 {
+        grid-column: col 1 / span 2;
+        grid-row:  row 6;
+    }
+    .project-div-grid-7 {
+        grid-column: col 1 / span 2;
+        grid-row: row 7;
+    }
+}
